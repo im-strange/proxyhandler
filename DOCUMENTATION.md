@@ -13,13 +13,6 @@ object that has the IP address and a port.
 - `fetch(file)` 
   - where `file` can be file or path of the file.
 
-
-
-
-
-
-
-
 ## Checker 
 On the other hand, `Checker` class the following function.
 
@@ -60,72 +53,49 @@ For instance, I have a file named `sample-proxies.txt` that has raw proxies that
 
 ```txt
 116.99.36.21	5301	Vietnam Hanoi	
-
 1260 ms
 
 SOCKS4, SOCKS5	High	2 minutes
-
 45.8.106.97	80	Curacao	
-
 80 ms
 
 HTTP	no	2 minutes
-
 203.24.102.122	80	Virgin Islands, British	
-
 100 ms
 
 HTTP	no	2 minutes
-
 172.64.193.2	80	United States	
-
 20 ms
 
 HTTP	no	2 minutes
-
 141.101.120.74	80		
-
 20 ms
 
 HTTP	no	2 minutes
-
 141.101.122.224	80		
-
 40 ms
 
 HTTP	no	2 minutes
-
 45.131.6.160	80	Netherlands	
-
 40 ms
 
 HTTP	no	2 minutes
-
 185.170.166.93	80	United Kingdom	
-
 140 ms
 
 HTTP	no	2 minutes
-
 172.67.182.103	80	United States	
-
 200 ms
 
 HTTP	no	2 minutes
-
 172.67.3.65	80	United States	
-
 200 ms
 
 HTTP	no	2 minutes
-
 172.67.180.50	80	United States	
-
 200 ms
 
 HTTP	no	2 minutes
-
 172.67.181.109	80	United States
-
 
 ```
