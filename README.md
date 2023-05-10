@@ -11,7 +11,17 @@
 Proxyhandler is a Python package used to handle proxies.
 
 
+
 ### Features 
 - Fetch proxies from a file 
 - Test proxies (http, https, socket)
-- Write result into a new file
+- Write result into a new file 
+
+### Installation 
+```
+pip install git+https://github.com/im-strange/proxyhandler.git
+```
+
+<br>
+
+> Use this repository's content for legal and ethical purposes only.
