@@ -48,8 +48,8 @@ Class `Processor` has one main function `process` which does the job from fetchi
   - `file` is the file of raw proxies.
   - `write` creates a new file if true, else, returns a list.
 
-## Example 
-For instance, I have a file named `sample-proxies.txt` that has raw proxies that I copied from <a href= "https://hidemy.name">hidemy.name</a> website.
+## Demo 
+For instance, I have a file named `sample-proxies.txt` that has raw proxies that I copied from <a href= "https://hidemy.name/en/proxy-list">hidemy.name</a> website.
 
 ```txt
 116.99.36.21	5301	Vietnam Hanoi	
@@ -98,4 +98,24 @@ HTTP	no	2 minutes
 HTTP	no	2 minutes
 172.67.181.109	80	United States
 
+```
+
+<br>
+I want to filter the file, and get the proxies address and port 
+
+```py
+from proxyhandler import Fetcher 
+
+fetcher = Fetcher()
+proxy_list = fetcher.fetch("sample-proxies.txt")
+
+print(proxy_list)
+
+```
+<br>
+
+The code above will print this output:
+
+```
+[['116.99.36.21', '5301'], ['45.8.106.97', '80'], ['203.24.102.122', '80'], ['172.64.193.2', '80'], ['45.131.6.160', '80'], ['185.170.166.93', '80'], ['172.67.182.103', '80'], ['172.67.3.65', '80'], ['172.67.180.50', '80'], ['172.67.181.109', '80']]
 ```
