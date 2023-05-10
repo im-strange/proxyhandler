@@ -133,7 +133,7 @@ The code above will print this output:
 
 Now, I want to filter the addresses with `check_socket_list()`
 
-```
+```py
 from proxyhandler import Fetcher, Checker
 
 fetcher = Fetcher()
@@ -164,7 +164,7 @@ and call the `check_socket_list` to filter the proxies and return `socket_proxie
 Now, I want to filter `proxy_list` with `test` function from `Checker` class
 which will return new list of proxies with connection labels.
 
-```
+```py
 ...
 filtered_proxies = checker.test(proxy_list)
 ...
@@ -204,12 +204,11 @@ use the proxy for both connections.
 Now, I want to call the `Processor.process` function
 to process `sample-proxies.txt` and create a new file with filtered proxies.
 
-```
+```py
 from proxyhandler import Processor
 
 processor = Processor()
 processor.process(file="sample-proxies.txt", write=True, name="filtered-proxies.txt")
-
 ```
 
 <br>
