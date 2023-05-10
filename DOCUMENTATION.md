@@ -117,5 +117,101 @@ print(proxy_list)
 The code above will print this output:
 
 ```
-[['116.99.36.21', '5301'], ['45.8.106.97', '80'], ['203.24.102.122', '80'], ['172.64.193.2', '80'], ['45.131.6.160', '80'], ['185.170.166.93', '80'], ['172.67.182.103', '80'], ['172.67.3.65', '80'], ['172.67.180.50', '80'], ['172.67.181.109', '80']]
+[['116.99.36.21', '5301'],
+ ['45.8.106.97', '80'],
+ ['203.24.102.122', '80'],
+ ['172.64.193.2', '80'],
+ ['45.131.6.160', '80'],
+ ['185.170.166.93', '80'],
+ ['172.67.182.103', '80'],
+ ['172.67.3.65', '80'],
+ ['172.67.180.50', '80'],
+ ['172.67.181.109', '80']]
 ```
+
+<br>
+
+Now, I want to filter the addresses with `check_socket_list()`
+
+```
+from proxyhandler import Fetcher, Checker
+
+fetcher = Fetcher()
+checker = Checker()
+
+proxy_list = fetcher.fetch("sample-proxies.txt")
+socket_proxies = checker.check_socket_list(proxy_list)
+
+print(socket_proxies)
+```
+
+In the code above, we import `Checker` class
+and call the `check_socket_list` to filter the proxies and return `socket_proxies`:
+
+```
+[['203.24.102.122', 80, 'socket'],
+ ['45.131.6.160', 80, 'socket'],
+ ['185.170.166.93', 80, 'socket'],
+ ['45.8.106.97', 80, 'socket'],
+ ['172.64.193.2', 80, 'socket'],
+ ['172.67.182.103', 80, 'socket'],
+ ['172.67.3.65', 80, 'socket'],
+ ['172.67.181.109', 80, 'socket'],
+ ['172.67.180.50', 80, 'socket']]
+```
+<br>
+
+Now, I want to filter `proxy_list` with `test` function from `Checker` class
+which will return new list of proxies with connection labels.
+
+```
+...
+filtered_proxies = checker.test(proxy_list)
+...
+```
+<br>
+
+The code above will return new list object:
+
+```
+[['172.67.182.103', 80, 'http'],
+ ['172.67.180.50', 80, 'http'],
+ ['185.170.166.93', 80, 'http'],
+ ['172.64.193.2', 80, 'http'],
+ ['45.8.106.97', 80, 'http'],
+ ['45.131.6.160', 80, 'http'],
+ ['172.67.3.65', 80, 'http'],
+ ['172.67.181.109', 80, 'http'],
+ ['203.24.102.122', 80, 'http'],
+ ['116.99.36.21', 5301, 'http'],
+ ['172.67.182.103', 80, 'socket'],
+ ['185.170.166.93', 80, 'socket'],
+ ['45.8.106.97', 80, 'socket'],
+ ['172.67.180.50', 80, 'socket'],
+ ['45.131.6.160', 80, 'socket'],
+ ['172.67.3.65', 80, 'socket'],
+ ['172.64.193.2', 80, 'socket'],
+ ['203.24.102.122', 80, 'socket'],
+ ['172.67.181.109', 80, 'socket']]
+```
+
+<br>
+
+Some host can have multiple labels. This means you can
+use the proxy for both connections.
+<br>
+
+Now, I want to call the `Processor.process` function
+to process `sample-proxies.txt` and create a new file with filtered proxies.
+
+```
+from proxyhandler import Processor
+
+processor = Processor()
+processor.process(file="sample-proxies.txt", write=True, name="filtered-proxies.txt")
+
+```
+
+<br>
+
+The code above will make `filtered-proxies.txt` file containing filtered proxies.
