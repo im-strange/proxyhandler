@@ -27,4 +27,6 @@ pip install git+https://github.com/im-strange/proxyhandler.git
   <img src="https://img.shields.io/badge/-Documentation-blue?style=for-the-badge">
 </a>
 
+<br>
+
 > Use the repository's content for legal and ethical purposes only.
