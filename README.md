@@ -22,14 +22,9 @@ Proxyhandler is a Python package used to handle proxies.
 pip install git+https://github.com/im-strange/proxyhandler.git
 ```
 
-### Documentation 
+### Additional Resources
 <a href="DOCUMENTATION.md">
   <img src="https://img.shields.io/badge/-Documentation-blue?style=for-the-badge">
 </a>
 
-<<<<<<< HEAD
-<br><br>
-
-=======
->>>>>>> 9ace4cd (Updated README.md)
 > Use the repository's content for legal and ethical purposes only.
